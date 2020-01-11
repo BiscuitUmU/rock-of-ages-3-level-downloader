@@ -6,4 +6,4 @@ A Rock of Ages 3 level downloader made in Javascript. It fetches all current lev
  - Set `API_SID=INSERT_CONNECTSID_VALUE` and `API_CID=INSERT_SESSIONID_VALUE` in your environment variables.
  - `npm install`
  - `npm start`
- - Levels will then be downloaded to the `/levels/data` folder and the API objects will be saved to `/levels/object` folder.
+ - Levels will then be downloaded to the `/_levels/data` folder and the API objects will be saved to `/_levels/object` folder.
