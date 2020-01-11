@@ -1,7 +1,7 @@
 {
-  "name": "rock-of-ages-downloader",
-  "version": "1.0.0",
-  "description": "saveLevelData",
+  "name": "rock-of-ages-3-level-downloader",
+  "version": "1.1.0",
+  "description": "Downloads Rock of Ages 3 Levels",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
