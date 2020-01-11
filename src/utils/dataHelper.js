@@ -19,19 +19,29 @@ async function saveLevelData(level) {
   const response = await fetch(level.url);
   var body = await response.text();
   var id = level.url.split("/")[4];
+
   await fsPath.writeFileSync(
     `./_levels/data/${
-      level.name ? `${id}-${level.gameMode}-${level.name}.json` : id
+      level.name
+        ? `${id} - ${level.gameMode} - ${level.name}.json`
+        : `${id}.json`
     }`,
     body
   );
   await fsPath.writeFileSync(
     `./_levels/object/${
-      level.name ? `${id}-${level.gameMode}-${level.name}.json` : id
+      level.name
+        ? `${id} - ${level.gameMode} - ${level.name}.json`
+        : `${id}.json`
     }`,
     JSON.stringify(level)
   );
-  console.log("Downloaded: " + `${id}-${level.gameMode}-${level.name}.json`);
+
+  console.log(
+    "Downloaded: " + level.name
+      ? `${id} - ${level.gameMode} - ${level.name}.json`
+      : `${id}.json`
+  );
 }
 
 module.exports = {
