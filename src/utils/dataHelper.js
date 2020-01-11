@@ -20,10 +20,16 @@ async function saveLevelData(level) {
   var body = await response.text();
   var id = level.url.split("/")[4];
   await fsPath.writeFileSync(
-    `./_levels/${
+    `./_levels/data/${
       level.name ? `${id}-${level.gameMode}-${level.name}.json` : id
     }`,
     body
+  );
+  await fsPath.writeFileSync(
+    `./_levels/object/${
+      level.name ? `${id}-${level.gameMode}-${level.name}.json` : id
+    }`,
+    JSON.stringify(level)
   );
   console.log("Downloaded: " + `${id}-${level.gameMode}-${level.name}.json`);
 }

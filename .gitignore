@@ -88,5 +88,5 @@ typings/
 .dynamodb/
 
 
-#Ignore levels folder
+# Ignore levels folder
 _levels/
