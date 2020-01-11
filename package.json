@@ -1,8 +1,8 @@
 {
   "name": "rock-of-ages-3-level-downloader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Downloads Rock of Ages 3 Levels",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.js"
