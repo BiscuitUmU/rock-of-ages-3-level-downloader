@@ -1,4 +1,4 @@
-const fsPath = require("fs-path");
+const fs = require("fs");
 const fetch = require("node-fetch");
 const { API_CID, API_SID } = require("./consts");
 
@@ -20,7 +20,13 @@ async function saveLevelData(level) {
   var body = await response.text();
   var id = level.url.split("/")[4];
 
-  await fsPath.writeFileSync(
+  //Create folders if none are there
+  createFolderIfNone("./_levels");
+  createFolderIfNone("./_levels/data");
+  createFolderIfNone("./_levels/object");
+
+  //Save data
+  await fs.writeFileSync(
     `./_levels/data/${
       level.name
         ? `${id} - ${level.gameMode} - ${level.name}.json`
@@ -28,7 +34,9 @@ async function saveLevelData(level) {
     }`,
     body
   );
-  await fsPath.writeFileSync(
+
+  //Save object
+  await fs.writeFileSync(
     `./_levels/object/${
       level.name
         ? `${id} - ${level.gameMode} - ${level.name}.json`
@@ -42,6 +50,12 @@ async function saveLevelData(level) {
       ? `${id} - ${level.gameMode} - ${level.name}.json`
       : `${id}.json`
   );
+}
+
+function createFolderIfNone(folder) {
+  if (!fs.existsSync(folder)) {
+    fs.mkdirSync(folder);
+  }
 }
 
 module.exports = {

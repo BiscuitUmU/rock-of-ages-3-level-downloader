@@ -10,7 +10,6 @@
   "author": "BiscuitUmU",
   "license": "MIT",
   "dependencies": {
-    "fs-path": "0.0.24",
     "node-fetch": "^2.6.0"
   },
   "bugs": {
